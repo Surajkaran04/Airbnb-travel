@@ -1,0 +1,22 @@
+import 'dart:ffi';
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class ForgotUsernameController extends GetxController {
+  var isViaEmail = false.obs;
+  var reset = "".obs;
+  var phoneNumber = TextEditingController();
+  var emailAddress = TextEditingController();
+  var phoneNumberText = "".obs;
+  var emailText = "".obs;
+  var isFill = false.obs;
+
+  checkFillOrNot() {
+    if (emailAddress.text.trim().isNotEmpty || phoneNumber.text.trim().isNotEmpty) {
+      isFill.value = true;
+    } else {
+      isFill.value = false;
+    }
+  }
+}
